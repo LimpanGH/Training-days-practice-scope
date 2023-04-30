@@ -13,9 +13,7 @@ If you get stuck during this project or would like to see an experienced develop
 Ideally, the getRandEvent() function selects an event at random. The getTrainingDays() function returns the number of days to train based on the event selected. The logEvent() and logTime() functions print the athlete name, event, and number of days to the console.
 But poorly scoped variables are causing errors.
 
-Expand days scope
-2. To avoid the ReferenceError, declare days within the getTrainingDays function, before the if statement.
-
+2. Expand days scope. To avoid the ReferenceError, declare days within the getTrainingDays function, before the if statement.
 Hint: Declare the variable using let. You don’t need to assign a value.
 
 3. Run the program again: no error, but days is undefined! New days variables are being defined in the scope of each if/else if statement.
@@ -23,14 +21,11 @@ Delete the three let‘s within the if/else if statements.
 
 4. Run the program again: fixed! Now the if/else if statements are changing the original days rather than defining a new one.
 
-Make name global
-5. The log functions–logEvent() and logTime()–use the same name variable. There seems to be a problem with the scoping; we can tell by the amount of duplicate code here! In addition to variables scoped too broadly, duplicate code can indicate that a variable may be scoped too tightly.
+5. Make name global. The log functions–logEvent() and logTime()–use the same name variable. There seems to be a problem with the scoping; we can tell by the amount of duplicate code here! In addition to variables scoped too broadly, duplicate code can indicate that a variable may be scoped too tightly.
 Let’s avoid this repetition by adding name as the first parameter for each function.
-
 Hint: The parameters for logEvent should be (name, event). The parameters for logTime should be (name, days).
 
-6.Move the name variable to global scope.
-
+6. Move the name variable to global scope.
 Hint: Delete const name = 'Nala'; from both functions. Add it to the global scope (outside of logEvent() and logTime()‘s function body) before calling logEvent() and logTime().
 
 7. Pass name as the first argument to logEvent() and logTime().
@@ -45,8 +40,7 @@ logTime(name, days);
 
 8. Check that the program still works! Run it and check the output.
 
-Make random local
-9. Try the functions for another competitor. Copy and paste this code at the end of the file.
+9. Make random local. Try the functions for another competitor. Copy and paste this code at the end of the file.
 const event2 = getRandEvent();
 const days2 = getTrainingDays(event2);
 const name2 = 'Warren';
@@ -58,7 +52,6 @@ logTime(name2, days2);
 
 11. We see that the random variable is defined in the global scope. Each time getRandEvent() is called, it uses the same value.
 At the top of the file, move the random variable from the global scope to block scope within the getRandEvent function.
-
 Hint: The const random... statement should be in between inside getRandEvent()‘s function body (i.e., inside the curly braces { }).
 
 12. Well done! Training Days is more maintainable and less error-prone thanks to your work. Run the program a few times to make sure the results are randomized.
