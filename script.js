@@ -49,7 +49,7 @@ logTime(days);
 
 SOLVED: __________________________________________________________________________________________
 const getRandEvent = () => {
-  const random = Math.floor(Math.random() * 3);
+const random = Math.floor(Math.random() * 3);
   if (random === 0) {
     return 'Marathon';
   } else if (random === 1) {
@@ -68,30 +68,28 @@ let days;
   } else if (event === 'Pentathlon') {
      days = 200;
   }
-
   return days;
 };
 
-const name = 'Nala';
 
-// The scope of `name` is too tight 
 const logEvent = (name,event) => {
   console.log(`${name}'s event is: ${event}`);
 };
 
-const logTime = (name, days) => {
+const logTime = (name, days) => {  
   console.log(`${name}'s time to train is: ${days} days`);
 };
 
+// Nala
 const event = getRandEvent();
 const days = getTrainingDays(event);
-
+const name = 'Nala';
 logEvent(name, event);
 logTime(name, days);
 
+// Warren
 const event2 = getRandEvent();
 const days2 = getTrainingDays(event2);
 const name2 = 'Warren';
- 
 logEvent(name2, event2);
 logTime(name2, days2);
